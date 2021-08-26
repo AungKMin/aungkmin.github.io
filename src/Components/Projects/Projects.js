@@ -1,12 +1,26 @@
 import React from 'react';
-import {Typography, Grid} from '@material-ui/core';
+import {Grid, makeStyles} from '@material-ui/core';
 
-import useStyles from './styles.js';
 import Project from './Project.js'; 
 import { projectsArray } from '../../data';
+import { SEMIGRAY } from '../../constants/constants';
 
 // images
 import devpost from '../../images/devpost.png';
+
+// import useStyles from './styles.js';
+
+const useStyles = makeStyles((theme) => ({
+
+    content: {
+        flexGrow: 1,
+        padding: theme.spacing(3),
+        backgroundColor: SEMIGRAY
+    },
+
+    toolbarHeight: theme.mixins.toolbar,
+
+}));
 
 export default (props) => { 
 

@@ -2,6 +2,12 @@ import { makeStyles } from "@material-ui/core";
 import { LIGHTGRAY, DARKGRAY, LIGHTBLUE, DARKBLUE, SEMIBLUE, SEMIGRAY, ICONGRAY } from "../../constants/constants";
 
 export default makeStyles((theme) => ({ 
+
+        chip: { 
+            backgroundColor: `${DARKBLUE}!important`,
+            color: `${LIGHTGRAY}!important`
+        },
+
         content: {
             flexGrow: 1,
             padding: theme.spacing(3),
@@ -118,11 +124,6 @@ export default makeStyles((theme) => ({
         listText: { 
             fontSize: '0.9rem',
         },
-        
-        chip: { 
-            backgroundColor: DARKBLUE,
-            color: LIGHTGRAY
-        },
 
         // take some space for very thin screens (galaxy fold)
         '@media only screen and (max-width: 300px)': { 
@@ -130,5 +131,5 @@ export default makeStyles((theme) => ({
                 height: 150
             }
         },
-    })
+        })
     )

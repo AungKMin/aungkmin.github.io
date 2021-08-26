@@ -12,6 +12,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import {makeStyles} from '@material-ui/core';
 import { useLocation } from 'react-router-dom';
 // icons
 import MailIcon from '@material-ui/icons/MailRounded';
@@ -23,11 +24,90 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import SettingsIcon from '@material-ui/icons/Settings';
 import DevpostIcon from '../../images/devpost.png'
 
-import useStyles from './styles.js';
+import { DRAWERWIDTH, DARKBLUE, LIGHTGRAY } from '../../constants/constants';
+
+// import useStyles from './styles.js';
+
+const useStyles = makeStyles((theme) => ({ 
+  drawer: { 
+      [theme.breakpoints.up('sm')]: { 
+          width: DRAWERWIDTH,
+          flexShrink: 0,
+      },
+  },
+  
+  appBar: { 
+      [theme.breakpoints.up('sm')]: { 
+          width: `calc(100% - ${DRAWERWIDTH}px)`,
+          marginLeft: DRAWERWIDTH,
+      },
+      backgroundColor: DARKBLUE,
+      color: LIGHTGRAY,
+  },
+
+  menuButton: { 
+      marginRight: theme.spacing(2),
+      [theme.breakpoints.up('sm')]: { 
+          display: 'none'
+      },
+  }, 
+
+  toolbarHeight: theme.mixins.toolbar,
+
+  drawerPaper: { 
+      width: DRAWERWIDTH,
+      backgroundColor: LIGHTGRAY,
+  },
+
+  drawerNameBox: { 
+      padding: theme.spacing(2),
+      paddingLeft: theme.spacing(3),
+      fontSize: '1rem'
+  },
+
+  drawerFirstName: { 
+      color: DARKBLUE,
+      fontSize: '1.8rem',
+  },
+  
+  drawerLastName: { 
+      color: DARKBLUE, 
+      fontWeight: 'bold',
+      fontSize: '1.8rem',
+  },
+
+  icon: {
+      minWidth: 40,
+  },
+
+  item: { 
+      paddingLeft: 35,
+  },
+
+  drawerContentBox: { 
+      overflow: 'hidden'
+  },
+
+  imgIcon: { 
+      width: 25,
+  },
+
+  link: { 
+      textDecoration: 'none',
+      color: 'inherit',
+  },
+
+  content: {
+      flexGrow: 1,
+      padding: theme.spacing(3),
+  },
+}));
+
 
 export default (props) => { 
 
   const classes = useStyles();
+
   const [mobileOpen, setMobileOpen] = useState(false); // drawer open or closed for mobile
 
   // Handler for drawer opening and closing
