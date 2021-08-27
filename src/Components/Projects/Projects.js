@@ -32,7 +32,7 @@ export default (props) => {
         <Grid container spacing={1}>
             {
                 projectsArray.map((item, index) => (
-                        <Grid item xs={12} sm={6} lg={3}>
+                        <Grid item xs={12} sm={12} md={6} lg={3}>
                             <Project
                                 title = {item.title}
                                 description = {item.description}

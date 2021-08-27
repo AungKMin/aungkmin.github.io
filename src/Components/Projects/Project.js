@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
     // the expanded content when visible 
     expandedContentShow: { 
         bottom: '14%', 
-        height: '76%', // 100% - 10%[the top margin] - 14%[the bottom icons bar]  
+        height: '85%', // 100% - 1%[the top margin] - 14%[the bottom icons bar]  
         transition: 'height 300ms ease-out',
     },
     

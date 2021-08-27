@@ -63,6 +63,7 @@ export default makeStyles((theme) => ({
 
     imgIcon: { 
         width: 25,
+        maxHeight: 25,
     },
 
     link: { 

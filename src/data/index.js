@@ -1,7 +1,7 @@
 export const introText = {
     introduction: "Hello! I'm Aung.",
     text: "I'm a Computer Engineering student at the University of Waterloo. I'm also a 2021 Schulich Leader.",
-    text2: "I've built web applications, mobile applications, games, and other software products. I've also dabbled in some hardware. I'm interseted in web development, artificial intelligence, educational technology, and space travel.",
+    text2: "I've built web applications, mobile applications, games, and other software products. I've also dabbled in some hardware. I'm interested in web development, artificial intelligence, educational technology, and space travel.",
     text3: "Feel free to contact me via Linkedin or email! I love meeting new people.",
     links: {
         "Linkedin":"https://www.linkedin.com/in/aung-khant-min/", 
@@ -18,8 +18,7 @@ export const projectsArray = [
         technologies: ['JavaScript', 'Python', 'React', 'Flask'],
         description: 'A tool for car insurance companies to leverage Geotab telematics and location data to make better data-driven insurance premium pricing decisions.', 
         points: [
-            'Won the Geotab challenge at Hack the 6ix.', 
-            'Worked in a team of four.', 
+            'Won the Geotab challenge at Hack the 6ix, working in a team of four.', 
             "Used Google Maps Platform's Geocoding API and Maps JavaScript API to implement a dynamically repositioning map and to get longitude and latitude from an address input.",
         ], 
         links: {"Devpost": 'https://devpost.com/software/surely-insured', 'GitHub': 'https://github.com/AungKMin/insurance-map'},
@@ -43,7 +42,7 @@ export const projectsArray = [
         description: 'A web app that organizes notes and tasks using a unique social-media-style structure to better motivate the user and organize important data.', 
         points: [
             'Built the web app to serve as my personal organization tool.', 
-            'Features include authentication, Google authentication, CRUD capability for notes, customizable tags for notes, search engine for notes, rich text editor implemented using Draft.js, and a "recommended notes" feature',
+            'Features include Google authentication, CRUD capability for notes, customizable tags for notes, search engine for notes, rich text editor, and a "recommended notes" feature',
         ], 
         links: {"GitHub": 'https://github.com/AungKMin/productivity-organizer-client', 'Link': 'https://productivity-organizer.netlify.app'},
         img: 'productivityOrganizer.png'
@@ -84,7 +83,7 @@ export const projectsArray = [
     },
     {
         title: 'Othello/Reversi Game', 
-        technologies: ['Python', 'Numpy', 'Matplotlib'],
+        technologies: ['Java'],
         description: "An implementation of the Reversi/Othello game with a difficulty adjustable computer AI player as a supported play mode. UI has a Rick and Morty theme.", 
         points: [
             'Implemented game logic and human-vs-human functionality as a school project; added computer AI player as a personal project.', 
@@ -96,7 +95,7 @@ export const projectsArray = [
     {
         title: 'Arcade Game Store', 
         technologies: ['Turing'],
-        description: "An arcade game shop with a simulated e-commerce purchase system and four playable games: Snake, Space Shooter clone, and two custom platformers.", 
+        description: "An arcade game shop with a simulated e-commerce purchase system and four playable games: Snake, a Space Shooter clone, an endless runner, and a custom platformer.", 
         points: [
             'Implemented simulated e-commerce purchase system as a school project; added playable games as a personal project.', 
             'Built the four games from scratch using a game loop and custom graphics.',
@@ -125,5 +124,15 @@ export const projectsArray = [
         ], 
         links: {"GitHub": 'https://github.com/AungKMin/2-player-reaction-browser-game'},
         img: 'reactionBrowserGame.png'
+    },
+    {
+        title: 'Accenterate', 
+        technologies: ['JavaScript'],
+        description: "A web application that identifies accents.", 
+        points: [
+            "Submitted to NSBE Hacks 2020, working in a team of four people.", 
+        ], 
+        links: {"Devpost": 'https://devpost.com/software/accenterate', 'GitHub': 'https://github.com/aungkmin/accenterate'},
+        img: 'accenterate.png'
     },
 ]
