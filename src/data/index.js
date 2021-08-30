@@ -1,7 +1,7 @@
 export const introText = {
     introduction: "Hello! I'm Aung.",
     text: "I'm a Computer Engineering student at the University of Waterloo. I'm also a 2021 Schulich Leader.",
-    text2: "I've built web applications, mobile applications, games, and other software products. I've also dabbled in some hardware. I'm interested in web development, artificial intelligence, educational technology, and space travel.",
+    text2: "I've built web applications, mobile applications, games, and other software products. I've used JavaScript, Python, Java, and C++. I've also dabbled in some hardware. I'm interested in web development, artificial intelligence, FinTech, and EdTech.",
     text3: "Feel free to contact me via Linkedin or email! I love meeting new people.",
     links: {
         "Linkedin":"https://www.linkedin.com/in/aung-khant-min/", 
@@ -134,5 +134,17 @@ export const projectsArray = [
         ], 
         links: {"Devpost": 'https://devpost.com/software/accenterate', 'GitHub': 'https://github.com/aungkmin/accenterate'},
         img: 'accenterate.png'
+    },
+    {
+        title: 'Raspberry Pi Car', 
+        technologies: ['Raspberry Pi', 'Python'],
+        description: "A remote control car built using a Raspberry Pi, an H-Bridge, Python, and GPIO Zero.", 
+        points: [
+            "Used Raspberry Pi's GPIO.", 
+            "Soldered wires to connect the motors and the battery box.", 
+            "Calibrated controls for peculiarities in motors using GPIO Zero.", 
+        ], 
+        links: {"Link": 'https://youtu.be/F8NePuxut-w'},
+        img: 'raspberryPi.png'
     },
 ]
