@@ -14,6 +14,17 @@ export const introText = {
 
 export const projectsArray = [
     {
+        title: 'Morse-code Escape Room Puzzle Prop', 
+        technologies: ['STM32-Nucleo', 'C++'],
+        description: "A safe that opens when the correct Morse-code is entered.", 
+        points: [
+            "Worked with a teammate.", 
+            "Incorporated LCD screen, servo, buzzer, and LEDs", 
+        ], 
+        links: {"Link": 'https://youtu.be/18rPVrxrhpo'},
+        img: 'morse.png'
+    },
+    {
         title: 'Surely Insured', 
         technologies: ['JavaScript', 'Python', 'React', 'Flask'],
         description: 'A tool for car insurance companies to leverage Geotab telematics and location data to make better data-driven insurance premium pricing decisions.', 
@@ -60,7 +71,7 @@ export const projectsArray = [
     },
     {
         title: 'FastPres', 
-        technologies: ['Python', 'Django'],
+        technologies: ['Python', 'JavaScript', 'Django', 'React'],
         description: "A tool to quickly create detailed PowerPoint files from just a text file. Insert images and different types of slides with a natural formatting language. Available as a website or python script.", 
         points: [
             'Submitted to XHacks; worked solo.', 
@@ -128,9 +139,10 @@ export const projectsArray = [
     {
         title: 'Accenterate', 
         technologies: ['JavaScript'],
-        description: "A web application that identifies accents.", 
+        description: "A web application that identifies an accent given a voice.", 
         points: [
             "Submitted to NSBE Hacks 2020, working in a team of four people.", 
+            "Demoed the project in person.", 
         ], 
         links: {"Devpost": 'https://devpost.com/software/accenterate', 'GitHub': 'https://github.com/aungkmin/accenterate'},
         img: 'accenterate.png'
