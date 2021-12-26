@@ -5,7 +5,7 @@ export const introText = {
     text3: "Feel free to contact me via Linkedin or email! I love meeting new people.",
     links: {
         "Linkedin":"https://www.linkedin.com/in/aung-khant-min/", 
-        "Resume":"https://drive.google.com/file/d/19x0rIB2QNrE_ia48VuAUZsLBuPy2keyV/view", 
+        "Resume":"https://drive.google.com/file/d/1rcfbY0dtadCyouyKBviOY1M45z5qhCPx/view?usp=sharing", 
         "GitHub":"https://github.com/AungKMin", 
         "Devpost":"https://devpost.com/AungKMin", 
         "Email":"mailto:aungkhantmin2014@gmail.com",
