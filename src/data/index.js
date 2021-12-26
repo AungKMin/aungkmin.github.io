@@ -14,12 +14,34 @@ export const introText = {
 
 export const projectsArray = [
     {
+        title: 'React Algorithm Visualizer',
+        technologies: ['JavaScript', 'React'],
+        description: 'Web app that visualizes various algorithms using bars to represent numbers',
+        points: [
+            "Used React.js and knowledge of sorting algorithms.",
+        ],
+        links: {"GitHub": 'https://github.com/AungKMin/algorithm-visualizer', "Link": 'https://algorithm-visualizer-aungkmin.netlify.app/'},
+        img: 'visualizer.png'
+    },
+    {
+        title: 'Command Line Tetris',
+        technologies: ['C++'],
+        description: 'An implementation of tetris on the command line.',
+        points: [
+            "Used windows console to simulate graphics.",
+            "Created game engine from scratch.",
+        ],
+        links: {"GitHub": 'https://github.com/AungKMin/command-line-tetris', "Link": 'https://youtu.be/GoWFfAIpq78'},
+        img: 'tetris.png'
+    },
+    {
         title: 'Morse-code Escape Room Puzzle Prop', 
-        technologies: ['STM32-Nucleo', 'C++'],
+        technologies: ['STM32-Nucleo', 'C'],
         description: "A safe that opens when the correct Morse-code is entered.", 
         points: [
             "Worked with a teammate.", 
-            "Incorporated LCD screen, servo, buzzer, and LEDs", 
+            "Incorporated LCD screen, servo, buzzer, and LEDs.",
+            "Wrote code base and " 
         ], 
         links: {"Link": 'https://youtu.be/18rPVrxrhpo'},
         img: 'morse.png'
