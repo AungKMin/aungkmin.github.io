@@ -18,7 +18,7 @@ export const projectsArray = [
         technologies: ['JavaScript', 'React'],
         description: 'Web app that visualizes various algorithms using bars to represent numbers',
         points: [
-            "Used React.js and knowledge of sorting algorithms.",
+            "Used React.js and knowledge of sorting and searching algorithms.",
         ],
         links: {"GitHub": 'https://github.com/AungKMin/algorithm-visualizer', "Link": 'https://algorithm-visualizer-aungkmin.netlify.app/'},
         img: 'visualizer.png'
