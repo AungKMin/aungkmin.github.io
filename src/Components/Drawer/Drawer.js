@@ -123,7 +123,7 @@ export default (props) => {
         <div className={classes.drawerNameBox}>
           <Typography variant="h5" className={classes.drawerFirstName}>Aung Khant</Typography>
           <Typography variant="h5" className={classes.drawerLastName}>Min</Typography>
-          <Typography variant="p">Full-Stack Developer</Typography>
+          <Typography variant="p">Software Developer</Typography>
         </div>
       </Link>
       <List>
@@ -148,7 +148,7 @@ export default (props) => {
           <ListItemText primary={"Linkedin"}/>
         </ListItem>
         </a>
-        <a className={classes.link} target="_blank" href="https://drive.google.com/file/d/19x0rIB2QNrE_ia48VuAUZsLBuPy2keyV/view">
+        <a className={classes.link} target="_blank" href="https://drive.google.com/file/d/1rcfbY0dtadCyouyKBviOY1M45z5qhCPx/view?usp=sharing">
         <ListItem className={classes.item} button>
           <ListItemIcon className={classes.icon} button><DescriptionIcon/></ListItemIcon>
           <ListItemText primary={"Resume"}/>
