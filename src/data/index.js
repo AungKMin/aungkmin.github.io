@@ -1,7 +1,7 @@
 export const introText = {
     introduction: "Hello! I'm Aung.",
     text: "I'm a Computer Engineering student at the University of Waterloo. I'm also a 2021 Schulich Leader.",
-    text2: "I've built web applications, mobile applications, games, and other software products. I've used JavaScript, Python, Java, and C++. I've also dabbled in some hardware. I'm interested in web development, artificial intelligence, FinTech, and EdTech.",
+    text2: "I've built web applications, mobile applications, games, and other software products. I've used JavaScript, Python, Java, C++, C#, and Terraform Language. I've also built hardware projects using a Raspberry Pi and an STM32 Nucleo board. I'm interested in web development, embedded technologies, artificial intelligence, FinTech, and EdTech.",
     text3: "Feel free to contact me via Linkedin or email! I love meeting new people.",
     links: {
         "Linkedin":"https://www.linkedin.com/in/aung-khant-min/", 
