@@ -21,7 +21,7 @@ export const projectsArray = [
             "Used React.js and knowledge of sorting and searching algorithms.",
         ],
         links: {"GitHub": 'https://github.com/AungKMin/algorithm-visualizer', "Link": 'https://algorithm-visualizer-aungkmin.netlify.app/'},
-        img: 'visualizer.png'
+        img: 'visualizer.PNG'
     },
     {
         title: 'Command Line Tetris',
@@ -32,7 +32,7 @@ export const projectsArray = [
             "Created game engine from scratch.",
         ],
         links: {"GitHub": 'https://github.com/AungKMin/command-line-tetris', "Link": 'https://youtu.be/GoWFfAIpq78'},
-        img: 'tetris.png'
+        img: 'tetris.PNG'
     },
     {
         title: 'Morse-code Escape Room Puzzle Prop', 

@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# aungkmin.github.io
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio site, built with [React](https://react.dev), [Material UI](https://mui.com) and [Vite](https://vite.dev), deployed to GitHub Pages.
 
-## Available Scripts
+## Requirements
 
-In the project directory, you can run:
+Node 24 (the version in `.nvmrc`). With [nvm](https://github.com/nvm-sh/nvm):
 
-### `npm start`
+```bash
+nvm use
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Available scripts
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `npm run dev`
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Starts the dev server at [http://localhost:5173](http://localhost:5173) with hot module replacement.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the production bundle into `dist/`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run preview`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Serves the built `dist/` folder locally, to check a production build before deploying.
 
-### `npm run eject`
+### `npm test`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Runs the [Vitest](https://vitest.dev) suite once. Use `npx vitest` for watch mode.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `npm run deploy`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Builds and publishes `dist/` to the `gh-pages` branch via [gh-pages](https://github.com/tschaub/gh-pages).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Notes on styling
 
-## Learn More
+Styles use [tss-react](https://docs.tss-react.dev)'s `makeStyles`, which is the maintained
+replacement for the `makeStyles` API that Material UI removed in v5.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`src/theme.js` intentionally pins a handful of Material UI v4 defaults (breakpoint values,
+`text.secondary`, `background.default`, `IconButton` padding, `Chip` line-height and the
+`body` typography). These keep the rendered site identical to the pre-v9 version. Note that
+v4's `breakpoints.down(key)` meant "below the *next* breakpoint", so every `down()` call site
+uses a key one step higher than the old code did.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Routing uses `HashRouter`, so URLs look like `/#/about` and `/#/projects`.

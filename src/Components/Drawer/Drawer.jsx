@@ -1,34 +1,34 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import {makeStyles} from '@material-ui/core';
+import AppBar from '@mui/material/AppBar';
+import CssBaseline from '@mui/material/CssBaseline';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import {useTheme} from '@mui/material/styles';
+import {makeStyles} from 'tss-react/mui';
 import { useLocation } from 'react-router-dom';
 // icons
-import MailIcon from '@material-ui/icons/MailRounded';
-import MenuIcon from '@material-ui/icons/Menu';
-import DescriptionIcon from '@material-ui/icons/Description';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import SettingsIcon from '@material-ui/icons/Settings';
+import MailIcon from '@mui/icons-material/MailRounded';
+import MenuIcon from '@mui/icons-material/Menu';
+import DescriptionIcon from '@mui/icons-material/Description';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SettingsIcon from '@mui/icons-material/Settings';
 import DevpostIcon from '../../images/devpost.png'
 
 import { DRAWERWIDTH, DARKBLUE, LIGHTGRAY } from '../../constants/constants';
 
-// import useStyles from './styles.js';
-
-const useStyles = makeStyles((theme) => ({ 
+const useStyles = makeStyles()((theme) => ({ 
   drawer: { 
       [theme.breakpoints.up('sm')]: { 
           width: DRAWERWIDTH,
@@ -107,7 +107,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default (props) => { 
 
-  const classes = useStyles();
+  const { classes } = useStyles();
+
+  const theme = useTheme();
+  const location = useLocation();
+
+  // Replaces the removed <Hidden implementation="js"> component: the drawers are
+  // mounted conditionally at the same 600px boundary as before.
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
 
   const [mobileOpen, setMobileOpen] = useState(false); // drawer open or closed for mobile
 
@@ -128,48 +136,62 @@ export default (props) => {
       </Link>
       <List>
         <Link className={classes.link} to="/about">
-          <ListItem className={classes.item} button>
-            <ListItemIcon className={classes.icon} button><AccountCircleIcon/></ListItemIcon>
-            <ListItemText primary={"About"}/>
+          <ListItem disablePadding>
+            <ListItemButton className={classes.item}>
+              <ListItemIcon className={classes.icon}><AccountCircleIcon/></ListItemIcon>
+              <ListItemText primary={"About"}/>
+            </ListItemButton>
           </ListItem>
         </Link>
         <Link className={classes.link} to="/projects">
-          <ListItem className={classes.item} button>
-            <ListItemIcon className={classes.icon} button><SettingsIcon/></ListItemIcon>
-            <ListItemText primary={"Projects"}/>
+          <ListItem disablePadding>
+            <ListItemButton className={classes.item}>
+              <ListItemIcon className={classes.icon}><SettingsIcon/></ListItemIcon>
+              <ListItemText primary={"Projects"}/>
+            </ListItemButton>
           </ListItem>
         </Link>
       </List>
       <Divider/>
       <List>
         <a className={classes.link} target="_blank" href="https://www.linkedin.com/in/aung-khant-min/">
-        <ListItem className={classes.item} button>
-          <ListItemIcon className={classes.icon} button><LinkedInIcon/></ListItemIcon>
-          <ListItemText primary={"Linkedin"}/>
+        <ListItem disablePadding>
+          <ListItemButton className={classes.item}>
+            <ListItemIcon className={classes.icon}><LinkedInIcon/></ListItemIcon>
+            <ListItemText primary={"Linkedin"}/>
+          </ListItemButton>
         </ListItem>
         </a>
         <a className={classes.link} target="_blank" href="https://drive.google.com/file/d/1rcfbY0dtadCyouyKBviOY1M45z5qhCPx/view?usp=sharing">
-        <ListItem className={classes.item} button>
-          <ListItemIcon className={classes.icon} button><DescriptionIcon/></ListItemIcon>
-          <ListItemText primary={"Resume"}/>
+        <ListItem disablePadding>
+          <ListItemButton className={classes.item}>
+            <ListItemIcon className={classes.icon}><DescriptionIcon/></ListItemIcon>
+            <ListItemText primary={"Resume"}/>
+          </ListItemButton>
         </ListItem>
         </a>
         <a className={classes.link} target="_blank" href="https://github.com/AungKMin">
-        <ListItem className={classes.item} button>
-          <ListItemIcon className={classes.icon} button><GitHubIcon/></ListItemIcon>
-          <ListItemText primary={"GitHub"}/>
+        <ListItem disablePadding>
+          <ListItemButton className={classes.item}>
+            <ListItemIcon className={classes.icon}><GitHubIcon/></ListItemIcon>
+            <ListItemText primary={"GitHub"}/>
+          </ListItemButton>
         </ListItem>
         </a>
         <a className={classes.link} target="_blank" href="https://devpost.com/AungKMin">
-        <ListItem className={classes.item} button>
-          <ListItemIcon className={classes.icon} button><img src={DevpostIcon} className={classes.imgIcon}/></ListItemIcon>
-          <ListItemText primary={"Devpost"}/>
+        <ListItem disablePadding>
+          <ListItemButton className={classes.item}>
+            <ListItemIcon className={classes.icon}><img src={DevpostIcon} className={classes.imgIcon}/></ListItemIcon>
+            <ListItemText primary={"Devpost"}/>
+          </ListItemButton>
         </ListItem>
         </a>
         <a className={classes.link} target="_blank" href="mailto:aungkhantmin2014@gmail.com">
-        <ListItem className={classes.item} button>
-          <ListItemIcon className={classes.icon} button><MailIcon/></ListItemIcon>
-          <ListItemText primary={"Email"}/>
+        <ListItem disablePadding>
+          <ListItemButton className={classes.item}>
+            <ListItemIcon className={classes.icon}><MailIcon/></ListItemIcon>
+            <ListItemText primary={"Email"}/>
+          </ListItemButton>
         </ListItem>
         </a> 
       </List>
@@ -199,11 +221,11 @@ export default (props) => {
             onClick={handleDrawerToggle}
           >
             {
-              useLocation().pathname === '/about' ? <AccountCircleIcon/> : useLocation().pathname === '/projects' ? <SettingsIcon/> : null
+              location.pathname === '/about' ? <AccountCircleIcon/> : location.pathname === '/projects' ? <SettingsIcon/> : null
             }
           </IconButton>
           <Typography variant="h6" noWrap>
-            {`${useLocation().pathname.charAt(1).toUpperCase()}${useLocation().pathname.slice(2)}`}
+            {`${location.pathname.charAt(1).toUpperCase()}${location.pathname.slice(2)}`}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -212,7 +234,7 @@ export default (props) => {
       <nav className={classes.drawer} aria-label="navigation">
 
         {/*Temporary Drawer for mobile*/}
-        <Hidden smUp implementation="js">
+        {isMobile && (
           <Drawer
             variant="temporary"
             anchor="left"
@@ -228,10 +250,10 @@ export default (props) => {
           >  
             {drawerContents}
           </Drawer>
-        </Hidden>
+        )}
         
         {/*Permanent Drawer for desktop*/}
-        <Hidden xsDown implementation="js">
+        {isDesktop && (
             <Drawer
               variant="permanent"
               classes = {{
@@ -241,7 +263,7 @@ export default (props) => {
             >
               {drawerContents}
             </Drawer>
-        </Hidden>
+        )}
       </nav>
     </div>
   )

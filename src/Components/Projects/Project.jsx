@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 import clsx from 'clsx';
-import {Card, CardMedia, CardContent, CardActions, Collapse, Typography, IconButton, List, ListItem, ListItemIcon, ListItemText, Chip, makeStyles} from '@material-ui/core';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkIcon from '@material-ui/icons/Link';
+import {Card, CardMedia, CardContent, CardActions, Collapse, Typography, IconButton, List, ListItem, ListItemIcon, ListItemText, Chip} from '@mui/material';
+import {makeStyles} from 'tss-react/mui';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkIcon from '@mui/icons-material/Link';
 import devpost from '../../images/devpost.png';
 
 import { LIGHTGRAY, DARKGRAY, LIGHTBLUE, DARKBLUE, SEMIBLUE, SEMIGRAY, ICONGRAY } from "../../constants/constants";
-// import useStyles from './styles.js';
 
 
-const useStyles = makeStyles((theme) => ({ 
+const useStyles = makeStyles()((theme) => ({ 
 
     chip: { 
         backgroundColor: `${DARKBLUE}!important`,
@@ -135,8 +135,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     // take some space for very thin screens (galaxy fold)
-    '@media only screen and (max-width: 300px)': { 
-        spaceFill: { 
+    spaceFill: { 
+        '@media only screen and (max-width: 300px)': { 
             height: 150
         }
     },
@@ -146,7 +146,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default (props) => { 
 
-    const classes = useStyles();
+    const { classes } = useStyles();
 
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -167,7 +167,7 @@ export default (props) => {
                 <div className={classes.chipContainer}>
                     {
                         props.technologies.map((item) => ( 
-                            <Chip size="small" label={item} className={classes.chip}/>
+                            <Chip key={item} size="small" label={item} className={classes.chip}/>
                         ))
                     }
                 </div>
@@ -182,9 +182,9 @@ export default (props) => {
             <CardActions className={classes.cardActions} disableSpacing>
                 {
                     Object.entries(props.links).map(([key, value], index) => ( 
-                            (key === 'GitHub') ? (<a href={`${value}`} target="_blank"> <IconButton> <GitHubIcon/> </IconButton> </a>) :
-                            (key === 'Devpost') ? (<a href={`${value}`} target="_blank"> <IconButton> <img className={classes.imgIcon} src={devpost}/> </IconButton> </a>) : 
-                            (<a href={`${value}`} target="_blank"> <IconButton> <LinkIcon/> </IconButton> </a>)
+                            (key === 'GitHub') ? (<a key={key} href={`${value}`} target="_blank"> <IconButton> <GitHubIcon/> </IconButton> </a>) :
+                            (key === 'Devpost') ? (<a key={key} href={`${value}`} target="_blank"> <IconButton> <img className={classes.imgIcon} src={devpost}/> </IconButton> </a>) : 
+                            (<a key={key} href={`${value}`} target="_blank"> <IconButton> <LinkIcon/> </IconButton> </a>)
                         )   
                     )
                 }
@@ -196,7 +196,7 @@ export default (props) => {
                <div className={classes.chipContainer}>
                     {
                         props.technologies.map((item) => ( 
-                            <Chip className={classes.chip} size="small" label={item}/>
+                            <Chip key={item} className={classes.chip} size="small" label={item}/>
                         ))
                     }
                 </div>
@@ -206,7 +206,7 @@ export default (props) => {
                 <List className={classes.list}>
                     {
                         props.points.map((item) => ( 
-                            <ListItem className={classes.listItem}>
+                            <ListItem key={item} className={classes.listItem}>
                                 <ListItemIcon className={classes.dotIcon}><span className={classes.dot}></span></ListItemIcon>
                                 <ListItemText primary={<Typography className={classes.listText}>{item}</Typography>}/>
                             </ListItem>

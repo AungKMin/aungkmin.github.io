@@ -1,8 +1,8 @@
-import {makeStyles} from '@material-ui/core';
+import { makeStyles } from 'tss-react/mui';
 
 import { DARKBLUE, LIGHTBLUE, LIGHTGRAY, DARKGRAY, SEMIBLUE, SEMIGRAY } from '../../constants/constants.js';
 
-export default makeStyles((theme) => ({
+export default makeStyles()((theme) => ({
         content: {
             flexGrow: 1,
             height: `calc(99vh - ${theme.mixins.toolbar.minHeight}px)`,
@@ -17,16 +17,14 @@ export default makeStyles((theme) => ({
             alignItems: 'center',
             height: '100%', 
             backgroundColor: SEMIGRAY,
-            [theme.breakpoints.down('md')]: {  // making content start at top instead of middle
+            [theme.breakpoints.down('lg')]: {  // making content start at top instead of middle
                 alignItems: 'start',
                 marginTop: theme.spacing(3),
             },
-        },
-
-        "@media only screen and (max-height: 550px)": { // to prevent part of the text box from going into navbar when the screen is too short
-            container: { 
+            // to prevent part of the text box from going into navbar when the screen is too short
+            "@media only screen and (max-height: 550px)": {
                 alignItems: 'start',
-            }
+            },
         },
 
         // box containing profile pic and text
@@ -37,7 +35,7 @@ export default makeStyles((theme) => ({
             display: 'flex',
             // alignItems: 'stretch',
             flexFlow: 'no-wrap',
-            [theme.breakpoints.down('md')]: { // let the text box wrap down if the screen is small
+            [theme.breakpoints.down('lg')]: { // let the text box wrap down if the screen is small
                 flexFlow: 'wrap',
             },
         },
@@ -48,7 +46,7 @@ export default makeStyles((theme) => ({
             // height: 568,
             height: 500,
             flexShrink: 0,
-            [theme.breakpoints.down('md')]: { // make the profile pic box span the screen and let it shrink to fit smaller screen 
+            [theme.breakpoints.down('lg')]: { // make the profile pic box span the screen and let it shrink to fit smaller screen 
                 flexShrink: 1, 
                 width: '100%', 
                 display: 'flex',
@@ -59,7 +57,7 @@ export default makeStyles((theme) => ({
         // actual profile pic
         profileImage: { 
             height: '100%',
-            [theme.breakpoints.down('md')]: { // center profile image if screen is small
+            [theme.breakpoints.down('lg')]: { // center profile image if screen is small
                 marginLeft: 'auto',
                 marginRight: 'auto'
             }
@@ -73,7 +71,7 @@ export default makeStyles((theme) => ({
             flexShrink: 1,
             position: 'relative',
             // padding: '1.5rem 2.25rem', 
-            [theme.breakpoints.down('md')]: { // make the text box span the entire screen and reduce padding if screen is small
+            [theme.breakpoints.down('lg')]: { // make the text box span the entire screen and reduce padding if screen is small
                 width: '100%',
                 // padding: '0.5rem, 0.75rem'
             },
@@ -86,7 +84,7 @@ export default makeStyles((theme) => ({
             margin: '1.5rem 2.25rem 1.5rem 2.25rem',
             backgroundColor: LIGHTGRAY,
             // marginBottom: '0', 
-            [theme.breakpoints.down('md')]: { // make the text box span the entire screen and reduce padding if screen is small
+            [theme.breakpoints.down('lg')]: { // make the text box span the entire screen and reduce padding if screen is small
                 margin: '0.5rem, 0.75rem'
             },
         },
@@ -130,7 +128,7 @@ export default makeStyles((theme) => ({
             flexFlow: 'wrap',
             backgroundColor: LIGHTGRAY,
             padding: '1.5rem 2.25rem', 
-            [theme.breakpoints.down('md')]: { // make the text box span the entire screen and reduce padding if screen is small
+            [theme.breakpoints.down('lg')]: { // make the text box span the entire screen and reduce padding if screen is small
                 margin: '0.5rem, 0.75rem'
             },
             '& > *': { 
